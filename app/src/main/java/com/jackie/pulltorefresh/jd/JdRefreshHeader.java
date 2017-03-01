@@ -125,16 +125,17 @@ public class JdRefreshHeader extends FrameLayout implements PtrUIHandler {
                 //logo设置
                 mIvMan.setAlpha(ptrIndicator.getCurrentPercent());
                 mIvGoods.setAlpha(ptrIndicator.getCurrentPercent());
-                LayoutParams mIvManLayoutParams = (LayoutParams) mIvMan.getLayoutParams();
+                LayoutParams params = (LayoutParams) mIvMan.getLayoutParams();
                 if (ptrIndicator.getCurrentPercent() <= 1) {
                     mIvMan.setScaleX(ptrIndicator.getCurrentPercent());
                     mIvMan.setScaleY(ptrIndicator.getCurrentPercent());
                     mIvGoods.setScaleX(ptrIndicator.getCurrentPercent());
                     mIvGoods.setScaleY(ptrIndicator.getCurrentPercent());
                     int marginRight = (int) (MARGIN_RIGHT - MARGIN_RIGHT * ptrIndicator.getCurrentPercent());
-                    mIvManLayoutParams.setMargins(0, 0, marginRight, 0);
-                    mIvMan.setLayoutParams(mIvManLayoutParams);
+                    params.setMargins(0, 0, marginRight, 0);
+                    mIvMan.setLayoutParams(params);
                 }
+
                 if (ptrIndicator.getCurrentPercent() < 1.2) {
                     mTvRemind.setText("下拉刷新...");
                 } else {
